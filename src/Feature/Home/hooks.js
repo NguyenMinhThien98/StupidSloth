@@ -1,23 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
+
 const useHomeFacade = () => {
     const navigation = useNavigation();
     const [data, setData] = useState([
-        {name: 'Zustand', screen: "Zustand" },
-        {name: 'Zustand', screen: "Zustand" },
-        {name: 'Zustand', screen: "Zustand" },
-        {name: 'Zustand', screen: "Zustand" },
-        {name: 'Zustand', screen: "Zustand" },
+        {name: 'TestRedux'},
     ]);
+    
+
 
     const onBack = () => {
         navigation.goBack();
     }
-    const onPress = useCallback((item) => {
-        navigation.navigate(item?.screen)
-    }, [data])
 
+    const onPress = (item) => {
+        console.log('--item', item?.name);
+        navigation.navigate(`${item?.name}`);
+        
+    
+    }
 
     return { data, onPress, onBack }
 

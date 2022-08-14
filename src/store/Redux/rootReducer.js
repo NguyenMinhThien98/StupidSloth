@@ -1,5 +1,7 @@
 import ReduxSlice  from "../../Feature/Redux/slice";
 
-export default {
+export const rootReducer = {
     ReduxSlice
 }
+
+export default rootReducer;
